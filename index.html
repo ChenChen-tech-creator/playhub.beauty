@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayHub Beauty - Premium Online Games Collection</title>
+    <meta name="description" content="Enjoy premium online games with perfect mobile compatibility at PlayHub Beauty. Play anytime, anywhere with our curated collection of games.">
+    <link rel="canonical" href="https://playhub.beauty/">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        apple: {
+                            blue: '#007AFF',
+                            indigo: '#5856D6',
+                            purple: '#AF52DE',
+                            pink: '#FF2D55',
+                            red: '#FF3B30',
+                            orange: '#FF9500',
+                            yellow: '#FFCC00',
+                            green: '#34C759',
+                            teal: '#5AC8FA',
+                            gray: '#8E8E93',
+                            lightGray: '#F2F2F7',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .game-card:hover {
+                transform: translateY(-5px);
+            }
+            .game-card {
+                transition: transform 0.3s ease;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 min-h-screen text-white">
+    <header class="bg-purple-700 text-white py-6 px-4">
+        <div class="container mx-auto max-w-6xl text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-center text-shadow">PlayHub Beauty</h1>
+            <p class="text-center mt-2 text-lg max-w-3xl mx-auto">
+                Experience the thrill of instant gaming - no downloads required. Jump straight 
+                into action with our curated collection of browser games!
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-6xl">
+        <h2 class="text-2xl font-bold mb-6 border-b border-purple-500 pb-2">Featured Games</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Game 1 -->
+            <div class="game-card bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div class="h-56 overflow-hidden">
+                    <img src="images/pairup3d.png" alt="Pair Up 3D" class="w-full h-full object-contain">
+                </div>
+                <div class="p-5">
+                    <h2 class="text-2xl font-bold text-white mb-2">Pair Up 3D</h2>
+                    <p class="text-gray-300 mt-2 mb-4">Match pairs of cards in this challenging 3D memory game with increasing difficulty levels.</p>
+                    <a href="games/pairup3d.html" class="w-full inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
+                        Play Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Game 2 -->
+            <div class="game-card bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div class="h-56 overflow-hidden">
+                    <img src="images/zooboom.png" alt="Zoo Boom" class="w-full h-full object-contain">
+                </div>
+                <div class="p-5">
+                    <h2 class="text-2xl font-bold text-white mb-2">Zoo Boom</h2>
+                    <p class="text-gray-300 mt-2 mb-4">Manage your own virtual zoo with colorful animals and exciting attractions in this simulation game.</p>
+                    <a href="games/zooboom.html" class="w-full inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
+                        Play Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Game 3 -->
+            <div class="game-card bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div class="h-56 overflow-hidden">
+                    <img src="images/cannonballs3d.png" alt="Cannon Balls 3D" class="w-full h-full object-contain">
+                </div>
+                <div class="p-5">
+                    <h2 class="text-2xl font-bold text-white mb-2">Cannon Balls 3D</h2>
+                    <p class="text-gray-300 mt-2 mb-4">Fire cannon balls to destroy targets in this physics-based 3D game with realistic destruction.</p>
+                    <a href="games/cannonballs3d.html" class="w-full inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
+                        Play Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Game 4 -->
+            <div class="game-card bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div class="h-56 overflow-hidden">
+                    <img src="images/lawnmower.png" alt="Lawn Mower" class="w-full h-full object-contain">
+                </div>
+                <div class="p-5">
+                    <h2 class="text-2xl font-bold text-white mb-2">Lawn Mower</h2>
+                    <p class="text-gray-300 mt-2 mb-4">Cut grass and complete mowing challenges in this oddly satisfying simulation game with various obstacles.</p>
+                    <a href="games/lawnmower.html" class="w-full inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
+                        Play Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Game 5 -->
+            <div class="game-card bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div class="h-56 overflow-hidden">
+                    <img src="images/wordsofwonders.png" alt="Words of Wonders" class="w-full h-full object-contain">
+                </div>
+                <div class="p-5">
+                    <h2 class="text-2xl font-bold text-white mb-2">Words of Wonders</h2>
+                    <p class="text-gray-300 mt-2 mb-4">Solve word puzzles and discover wonders of the world in this brain-teasing vocabulary game.</p>
+                    <a href="games/wordsofwonders.html" class="w-full inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
+                        Play Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Game 6 - Food Rush -->
+            <div class="game-card bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div class="h-56 overflow-hidden">
+                    <img src="images/foodrush.png" alt="Food Rush" class="w-full h-full object-contain">
+                </div>
+                <div class="p-5">
+                    <h2 class="text-2xl font-bold text-white mb-2">Food Rush</h2>
+                    <p class="text-gray-300 mt-2 mb-4">Match and connect delicious food items in this colorful and addictive puzzle game.</p>
+                    <a href="games/foodrush.html" class="w-full inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
+                        Play Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6 px-4">
+        <div class="container mx-auto max-w-6xl text-center">
+            <p>&copy; 2023 PlayHub Beauty. All rights reserved.</p>
+            <p class="mt-2">The premier destination for high-quality online games</p>
+        </div>
+    </footer>
+</body>
+</html> 
