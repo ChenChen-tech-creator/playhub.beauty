@@ -50,13 +50,81 @@
             .game-card {
                 transition: transform 0.3s ease;
             }
+            .gradient-background {
+                background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            }
+            .gradient-header {
+                background: linear-gradient(135deg, #6b46c1 0%, #805ad5 50%, #b794f4 100%);
+            }
+            .gradient-card {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            }
+            .gradient-button {
+                background: linear-gradient(135deg, #6b46c1 0%, #9f7aea 100%);
+                position: relative;
+                z-index: 1;
+                overflow: hidden;
+            }
+            .gradient-button:hover {
+                background: linear-gradient(135deg, #553c9a 0%, #805ad5 100%);
+            }
+            .gradient-button::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(-45deg, #805ad5, #6b46c1, #9f7aea, #d6bcfa);
+                background-size: 400% 400%;
+                animation: button-gradient 3s ease infinite;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                z-index: -1;
+            }
+            .gradient-button:hover::before {
+                opacity: 1;
+            }
+            @keyframes button-gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+            .gradient-text {
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                background-image: linear-gradient(135deg, #f6e05e 0%, #ed8936 50%, #dd6b20 100%);
+            }
+            .animated-gradient {
+                background: linear-gradient(-45deg, #1a202c, #2d3748, #3c366b, #434190);
+                background-size: 400% 400%;
+                animation: gradient-animation 15s ease infinite;
+            }
+            @keyframes gradient-animation {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
         }
     </style>
 </head>
-<body class="bg-gray-900 min-h-screen text-white">
-    <header class="bg-purple-700 text-white py-6 px-4">
+<body class="animated-gradient min-h-screen text-white">
+    <header class="gradient-header text-white py-6 px-4">
         <div class="container mx-auto max-w-6xl text-center">
-            <h1 class="text-3xl md:text-4xl font-bold text-center text-shadow">PlayHub Beauty</h1>
+            <h1 class="text-3xl md:text-4xl font-bold text-center text-shadow gradient-text">PlayHub Beauty</h1>
             <p class="text-center mt-2 text-lg max-w-3xl mx-auto">
                 Experience the thrill of instant gaming - no downloads required. Jump straight 
                 into action with our curated collection of browser games!
@@ -69,84 +137,84 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Game 1 -->
-            <div class="game-card bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div class="game-card gradient-card rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div class="h-56 overflow-hidden">
                     <img src="images/pairup3d.png" alt="Pair Up 3D" class="w-full h-full object-contain">
                 </div>
                 <div class="p-5">
                     <h2 class="text-2xl font-bold text-white mb-2">Pair Up 3D</h2>
                     <p class="text-gray-300 mt-2 mb-4">Match pairs of cards in this challenging 3D memory game with increasing difficulty levels.</p>
-                    <a href="games/pairup3d.html" class="w-full inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
+                    <a href="games/pairup3d.html" class="w-full inline-block gradient-button text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
                         Play Now
                     </a>
                 </div>
             </div>
 
             <!-- Game 2 -->
-            <div class="game-card bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div class="game-card gradient-card rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div class="h-56 overflow-hidden">
                     <img src="images/zooboom.png" alt="Zoo Boom" class="w-full h-full object-contain">
                 </div>
                 <div class="p-5">
                     <h2 class="text-2xl font-bold text-white mb-2">Zoo Boom</h2>
                     <p class="text-gray-300 mt-2 mb-4">Manage your own virtual zoo with colorful animals and exciting attractions in this simulation game.</p>
-                    <a href="games/zooboom.html" class="w-full inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
+                    <a href="games/zooboom.html" class="w-full inline-block gradient-button text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
                         Play Now
                     </a>
                 </div>
             </div>
 
             <!-- Game 3 -->
-            <div class="game-card bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div class="game-card gradient-card rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div class="h-56 overflow-hidden">
                     <img src="images/cannonballs3d.png" alt="Cannon Balls 3D" class="w-full h-full object-contain">
                 </div>
                 <div class="p-5">
                     <h2 class="text-2xl font-bold text-white mb-2">Cannon Balls 3D</h2>
                     <p class="text-gray-300 mt-2 mb-4">Fire cannon balls to destroy targets in this physics-based 3D game with realistic destruction.</p>
-                    <a href="games/cannonballs3d.html" class="w-full inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
+                    <a href="games/cannonballs3d.html" class="w-full inline-block gradient-button text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
                         Play Now
                     </a>
                 </div>
             </div>
 
             <!-- Game 4 -->
-            <div class="game-card bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div class="game-card gradient-card rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div class="h-56 overflow-hidden">
                     <img src="images/lawnmower.png" alt="Lawn Mower" class="w-full h-full object-contain">
                 </div>
                 <div class="p-5">
                     <h2 class="text-2xl font-bold text-white mb-2">Lawn Mower</h2>
                     <p class="text-gray-300 mt-2 mb-4">Cut grass and complete mowing challenges in this oddly satisfying simulation game with various obstacles.</p>
-                    <a href="games/lawnmower.html" class="w-full inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
+                    <a href="games/lawnmower.html" class="w-full inline-block gradient-button text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
                         Play Now
                     </a>
                 </div>
             </div>
 
             <!-- Game 5 -->
-            <div class="game-card bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div class="game-card gradient-card rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div class="h-56 overflow-hidden">
                     <img src="images/wordsofwonders.png" alt="Words of Wonders" class="w-full h-full object-contain">
                 </div>
                 <div class="p-5">
                     <h2 class="text-2xl font-bold text-white mb-2">Words of Wonders</h2>
                     <p class="text-gray-300 mt-2 mb-4">Solve word puzzles and discover wonders of the world in this brain-teasing vocabulary game.</p>
-                    <a href="games/wordsofwonders.html" class="w-full inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
+                    <a href="games/wordsofwonders.html" class="w-full inline-block gradient-button text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
                         Play Now
                     </a>
                 </div>
             </div>
 
             <!-- Game 6 - Food Rush -->
-            <div class="game-card bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div class="game-card gradient-card rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div class="h-56 overflow-hidden">
                     <img src="images/foodrush.png" alt="Food Rush" class="w-full h-full object-contain">
                 </div>
                 <div class="p-5">
                     <h2 class="text-2xl font-bold text-white mb-2">Food Rush</h2>
                     <p class="text-gray-300 mt-2 mb-4">Match and connect delicious food items in this colorful and addictive puzzle game.</p>
-                    <a href="games/foodrush.html" class="w-full inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
+                    <a href="games/foodrush.html" class="w-full inline-block gradient-button text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
                         Play Now
                     </a>
                 </div>
@@ -154,7 +222,7 @@
         </div>
     </main>
 
-    <footer class="bg-gray-800 text-white py-6 px-4">
+    <footer class="gradient-card text-white py-6 px-4">
         <div class="container mx-auto max-w-6xl text-center">
             <p>&copy; 2023 PlayHub Beauty. All rights reserved.</p>
             <p class="mt-2">The premier destination for high-quality online games</p>
