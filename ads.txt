@@ -1,0 +1,2 @@
+gamedistribution.com, 0, DIRECT
+gamedistribution.com, 0, RESELLER 
