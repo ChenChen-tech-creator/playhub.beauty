@@ -1,0 +1,43 @@
+﻿                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Left side - Game Description -->
+                    <div class="space-y-6">
+                        <h2 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                            Smash Karts
+                        </h2>
+                        <p class="text-xl text-gray-300 leading-relaxed">
+                            Blend interactive racing action with unique battle mechanics in this fast-paced multiplayer experience. 
+                            Race against players worldwide while collecting power-ups and dominating the arena.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button onclick="startGame()" class="gradient-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg transition-all transform hover:scale-105">
+                                START PLAYING
+                            </button>
+                            <a href="#features" class="border-2 border-blue-500 text-blue-400 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-500 hover:text-white transition-all text-center">
+                                Learn More
+                            </a>
+                        </div>
+                        <div class="flex items-center space-x-4 text-gray-400">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-green-400"></span>
+                                <span>Online Multiplayer</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-blue-400"></span>
+                                <span>No Download Required</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right side - Game Area -->
+                    <div class="relative">
+                        <div class="aspect-video bg-gray-900 rounded-xl overflow-hidden shadow-2xl border border-gray-700">
+                            <iframe 
+                                id="gameFrame"
+                                src="https://www.gameflare.com/embed/smash-karts/" 
+                                class="w-full h-full"
+                                title="Smash Karts Game"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>

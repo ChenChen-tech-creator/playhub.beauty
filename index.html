@@ -12,8 +12,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smash Karts - Play Online Racing Game</title>
-    <meta name="description" content="Play Smash Karts online - the ultimate kart racing battle game. Race, battle, and dominate the arena in this exciting multiplayer game.">
+    <title>🏎️ Smash Karts - Free Online Racing Battle Game | Play Now! 🎮</title>
+    <meta name="description" content="🚀 Play Smash Karts FREE! Epic 3D kart racing with weapons & 24-player battles ⚔️ No download needed 🎯 Race, fight & dominate now! 🏆">
     <link rel="canonical" href="https://playhub.beauty/">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -67,6 +67,80 @@
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        
+        /* Enhanced iframe styles */
+        #gameFrame {
+            transition: all 0.3s ease;
+        }
+        
+        /* Fullscreen styles */
+        .fullscreen-container {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            z-index: 9999 !important;
+            background: #000;
+            border-radius: 0 !important;
+        }
+        
+        .fullscreen-container iframe {
+            width: 100% !important;
+            height: 100% !important;
+            border: none !important;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .game-container {
+                margin: 0 -1rem;
+            }
+            
+            #gameFrame {
+                min-height: 250px;
+            }
+            
+            .game-controls {
+                opacity: 1 !important;
+                background: rgba(0, 0, 0, 0.7);
+                border-radius: 0.5rem;
+                padding: 0.5rem;
+            }
+        }
+        
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .group-hover\:opacity-100 {
+                opacity: 1 !important;
+            }
+        }
+        
+        /* Loading animation enhancement */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Enhanced button styles */
+        .game-control-btn {
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+        }
+        
+        .game-control-btn:hover {
+            transform: scale(1.05);
+            border-color: rgba(255, 107, 53, 0.5);
+        }
+        
+        .game-control-btn:active {
+            transform: scale(0.95);
+        }
     </style>
 </head>
 <body class="gradient-bg min-h-screen text-white">
@@ -83,12 +157,14 @@
                     </h1>
                 </div>
                 
-                <ul class="hidden md:flex space-x-8">
-                    <li><a href="#game" class="hover:text-orange-400 transition-colors">Play Now</a></li>
-                    <li><a href="#features" class="hover:text-orange-400 transition-colors">Features</a></li>
-                    <li><a href="#how-to-play" class="hover:text-orange-400 transition-colors">How to Play</a></li>
-                    <li><a href="#faq" class="hover:text-orange-400 transition-colors">FAQ</a></li>
-                </ul>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#game" class="text-gray-300 hover:text-orange-400 transition-colors">Play Now</a>
+                    <a href="#features" class="text-gray-300 hover:text-orange-400 transition-colors">Features</a>
+                    <a href="#what-is" class="text-gray-300 hover:text-orange-400 transition-colors">What is</a>
+                    <a href="#how-to-play" class="text-gray-300 hover:text-orange-400 transition-colors">How to Play</a>
+                    <a href="#why-play" class="text-gray-300 hover:text-orange-400 transition-colors">Why Play</a>
+                    <a href="#faq" class="text-gray-300 hover:text-orange-400 transition-colors">FAQ</a>
+                </nav>
                 
                 <button class="md:hidden text-white">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,326 +178,506 @@
     <main class="pt-20">
         <!-- Game iframe Section -->
         <section id="game" class="py-12 bg-gray-800">
-            <div class="container mx-auto px-4 max-w-6xl text-center">
-                <h2 class="text-4xl font-bold mb-8 bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
-                    Play Smash Karts Online
-                </h2>
-        
-                <div class="relative max-w-4xl mx-auto mb-8">
-                    <div class="aspect-video bg-gray-900 rounded-xl overflow-hidden shadow-2xl border border-gray-700">
-                        <iframe 
-                            src="https://www.gameflare.com/embed/smash-karts/" 
-                            class="w-full h-full"
-                            title="Smash Karts Game"
-                            allowfullscreen>
-                        </iframe>
+            <div class="container mx-auto px-4 max-w-6xl">
+                <!-- Top: Game Introduction and Buttons -->
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                        Smash Karts
+                    </h2>
+                    <p class="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto mb-8">
+                        Experience the ultimate wacky 3D kart racing game! Drive around colorful arenas and smash other karts with creative driving skills and a heavy arsenal of weapons.
+                    </p>
+                    <div class="flex justify-center mb-6">
+                        <a href="#what-is" class="border-2 border-blue-500 text-blue-400 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-500 hover:text-white transition-all text-center">
+                            Learn More
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center space-x-8 text-gray-400">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-green-400">●</span>
+                            <span>Free to Play</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-blue-400">●</span>
+                            <span>No Download Required</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-orange-400">●</span>
+                            <span>Up to 24 Players</span>
+                        </div>
                     </div>
                 </div>
-                
-                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-                    Jump into your kart and race against players from around the world in this action-packed multiplayer battle arena!
-                </p>
+
+                <!-- Middle: Game iframe (Larger and More Prominent) -->
+                <div class="mb-12">
+                    <div class="aspect-video bg-gray-900 rounded-xl overflow-hidden shadow-2xl border border-gray-700 relative group max-w-5xl mx-auto">
+                        <iframe 
+                            id="gameFrame"
+                            src="https://www.gameflare.com/embed/smash-karts/" 
+                            class="w-full h-full border-0"
+                            title="Smash Karts Game"
+                            allow="fullscreen; autoplay; encrypted-media; gyroscope; accelerometer"
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
+                        
+                        <!-- Game Controls Overlay -->
+                        <div class="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 game-controls">
+                            <!-- Fullscreen Button -->
+                            <button 
+                                onclick="toggleFullscreen()"
+                                id="fullscreenBtn"
+                                class="game-control-btn bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-lg transition-all duration-200"
+                                title="Toggle Fullscreen">
+                                <svg id="fullscreenIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+                                </svg>
+                            </button>
+                            
+                            <!-- Refresh Button -->
+                            <button 
+                                onclick="refreshGame()"
+                                class="game-control-btn bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-lg transition-all duration-200"
+                                title="Refresh Game">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <!-- Loading Indicator -->
+                        <div id="gameLoading" class="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-90 backdrop-blur-sm">
+                            <div class="text-center space-y-4">
+                                <div class="loading-spinner mx-auto"></div>
+                                <p class="text-white text-lg">Loading Smash Karts...</p>
+                                <p class="text-gray-400 text-sm">Preparing your racing experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom: Game Controls and Information -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Game Controls -->
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700">
+                        <h4 class="font-bold text-xl mb-4 text-blue-400">🎮 Game Controls</h4>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <p class="font-semibold text-green-400 mb-3">Keyboard Controls:</p>
+                                <ul class="text-gray-300 space-y-2">
+                                    <li>• W/↑: Move Forward</li>
+                                    <li>• A/←: Turn Left</li>
+                                    <li>• D/→: Turn Right</li>
+                                    <li>• S/↓: Brake/Reverse</li>
+                                    <li>• Spacebar: Use Weapon</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-purple-400 mb-3">Controller Support:</p>
+                                <ul class="text-gray-300 space-y-2">
+                                    <li>• Left Analog: Turning</li>
+                                    <li>• RT: Accelerate</li>
+                                    <li>• LT: Brake</li>
+                                    <li>• A Button: Use Weapon</li>
+                                    <li>• Xbox-style compatible</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Tips and Game Features -->
+                    <div class="space-y-6">
+                        <!-- Mobile Tips -->
+                        <div class="bg-gray-900 p-6 rounded-xl border border-gray-700">
+                            <h4 class="font-bold text-xl mb-4 text-orange-400">📱 Mobile Gaming</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li>• Tap fullscreen for better experience</li>
+                                <li>• Use landscape mode for optimal play</li>
+                                <li>• Touch controls automatically enabled</li>
+                                <li>• Cross-platform multiplayer support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Hero Section -->
-        <section class="hero py-20 bg-gradient-to-br from-gray-900 to-gray-800">
+        <!-- Why Play Smash Karts Section -->
+        <section id="why-play" class="py-16 bg-gray-800">
             <div class="container mx-auto px-4 max-w-6xl">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="animate-fade-in">
-                        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                            Race, Battle, and 
-                            <span class="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
-                                Dominate
-                            </span>
-                        </h1>
-                        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-                            Experience the ultimate kart racing battle arena! Compete against players worldwide, 
-                            collect power-ups, and smash your way to victory in this action-packed multiplayer game.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="#game" class="gradient-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg transition-all transform hover:scale-105">
-                        Play Now
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+                    Why Play Smash Karts?
+                </h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Instant Fun -->
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 text-center">
+                        <div class="text-6xl mb-4">🚀</div>
+                        <h3 class="text-xl font-bold text-yellow-400 mb-3">Instant Action</h3>
+                        <p class="text-gray-300">Jump straight into the action with no downloads or installations required. Smash Karts delivers immediate entertainment in your browser.</p>
+                    </div>
+
+                    <!-- Multiplayer Chaos -->
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 text-center">
+                        <div class="text-6xl mb-4">👥</div>
+                        <h3 class="text-xl font-bold text-blue-400 mb-3">Multiplayer Mayhem</h3>
+                        <p class="text-gray-300">Battle up to 24 players in real-time combat. Experience the thrill of competitive racing with friends and players worldwide.</p>
+                    </div>
+
+                    <!-- Unique Gameplay -->
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 text-center">
+                        <div class="text-6xl mb-4">⚔️</div>
+                        <h3 class="text-xl font-bold text-red-400 mb-3">Combat Racing</h3>
+                        <p class="text-gray-300">Unlike traditional racing games, Smash Karts combines speed with strategy through its unique weapon-based combat system.</p>
+                    </div>
+
+                    <!-- Free to Play -->
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 text-center">
+                        <div class="text-6xl mb-4">💰</div>
+                        <h3 class="text-xl font-bold text-green-400 mb-3">Completely Free</h3>
+                        <p class="text-gray-300">Enjoy all features without spending a penny. No hidden costs, no premium subscriptions - just pure gaming fun.</p>
+                    </div>
+
+                    <!-- Regular Updates -->
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 text-center">
+                        <div class="text-6xl mb-4">🔄</div>
+                        <h3 class="text-xl font-bold text-purple-400 mb-3">Fresh Content</h3>
+                        <p class="text-gray-300">Regular seasonal updates bring new arenas, themes, and features to keep the Smash Karts experience exciting and fresh.</p>
+                    </div>
+
+                    <!-- Cross-Platform -->
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 text-center">
+                        <div class="text-6xl mb-4">📱</div>
+                        <h3 class="text-xl font-bold text-orange-400 mb-3">Play Anywhere</h3>
+                        <p class="text-gray-300">Compatible with desktop, mobile, and tablet devices. Play Smash Karts wherever you are with seamless cross-platform support.</p>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold text-white mb-4">Ready to Join the Battle?</h3>
+                    <p class="text-xl text-gray-300 mb-6">Don't wait - the arena is calling your name!</p>
+                    <a href="#game" class="gradient-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg transition-all transform hover:scale-105 inline-block">
+                        START PLAYING NOW
                     </a>
-                            <a href="#how-to-play" class="border-2 border-blue-500 text-blue-400 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-500 hover:text-white transition-all">
-                                Learn How
-                            </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- YouTube Videos Section -->
+        <section class="py-16 bg-gray-900">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">
+                    Smash Karts Gameplay Videos
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Video 1 -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700">
+                        <div class="aspect-video">
+                            <iframe
+                                src="https://www.youtube.com/embed/zp6NnMGXoFQ?si=-zxdtO9uTVAEPKtX"
+                                title="Smash Karts Gameplay Video 1"
+                                class="w-full h-full border-0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-white mb-2">Epic Smash Karts Battles</h3>
+                            <p class="text-gray-400 text-sm">Watch intense multiplayer battles and learn winning strategies in this action-packed Smash Karts gameplay footage.</p>
                         </div>
                     </div>
-                    <div class="text-center">
-                        <img src="https://via.placeholder.com/600x400/ff6b35/ffffff?text=Smash+Karts+Action" 
-                             alt="Smash Karts gameplay" 
-                             class="rounded-xl shadow-2xl max-w-full h-auto">
+
+                    <!-- Video 2 -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700">
+                        <div class="aspect-video">
+                            <iframe
+                                src="https://www.youtube.com/embed/__BfZsUTSwY?si=R6IJ9M1yLrS2KVVL"
+                                title="Smash Karts Gameplay Video 2"
+                                class="w-full h-full border-0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-white mb-2">Smash Karts Tips & Tricks</h3>
+                            <p class="text-gray-400 text-sm">Master the game with pro tips and advanced techniques for dominating the arena in Smash Karts battles.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Features Section -->
-        <section id="features" class="py-20 bg-gray-800">
+        <section id="features" class="py-16 bg-gray-900">
             <div class="container mx-auto px-4 max-w-6xl">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">Game Features</h2>
-                    <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-                        Discover what makes Smash Karts the ultimate racing battle experience
-                    </p>
-            </div>
-
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    Comprehensive Smash Karts Game Features
+                </h2>
+                
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-gray-900 p-8 rounded-xl card-hover border border-gray-700">
-                        <div class="text-4xl mb-4">🏎️</div>
-                        <h3 class="text-2xl font-bold mb-4">Fast-Paced Racing</h3>
-                        <p class="text-gray-300">Experience high-speed kart racing with smooth controls and responsive gameplay.</p>
-            </div>
+                    <!-- Core Gameplay -->
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <div class="text-6xl text-center mb-4">🏎️</div>
+                        <h3 class="text-xl font-bold text-blue-400 mb-3 text-center">Dynamic Kart Racing</h3>
+                        <p class="text-gray-300 text-center">
+                            Experience thrilling 3D kart battles with physics-based racing mechanics. Smash Karts delivers fast-paced multiplayer action with up to 24 players per arena.
+                        </p>
+                    </div>
 
-                    <div class="bg-gray-900 p-8 rounded-xl card-hover border border-gray-700">
-                        <div class="text-4xl mb-4">⚔️</div>
-                        <h3 class="text-2xl font-bold mb-4">Battle Arena</h3>
-                        <p class="text-gray-300">Engage in epic battles with weapons and power-ups scattered across the arena.</p>
-            </div>
+                    <!-- Weapon Systems -->
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <div class="text-6xl text-center mb-4">⚔️</div>
+                        <h3 class="text-xl font-bold text-red-400 mb-3 text-center">Combat Arsenal</h3>
+                        <p class="text-gray-300 text-center">
+                            Collect powerful weapons including rockets, machine guns, and defensive shields. Strategic weapon usage is key to dominating Smash Karts battles.
+                        </p>
+                    </div>
 
-                    <div class="bg-gray-900 p-8 rounded-xl card-hover border border-gray-700">
-                        <div class="text-4xl mb-4">🌍</div>
-                        <h3 class="text-2xl font-bold mb-4">Multiplayer Online</h3>
-                        <p class="text-gray-300">Compete against real players from around the world in real-time matches.</p>
-            </div>
+                    <!-- Game Modes -->
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <div class="text-6xl text-center mb-4">🎯</div>
+                        <h3 class="text-xl font-bold text-green-400 mb-3 text-center">Multiple Game Modes</h3>
+                        <p class="text-gray-300 text-center">
+                            Choose from Free For All, Capture The Flag, Gem Collector, and Team Battles. Each mode offers unique Smash Karts gameplay experiences.
+                        </p>
+                    </div>
 
-                    <div class="bg-gray-900 p-8 rounded-xl card-hover border border-gray-700">
-                        <div class="text-4xl mb-4">🎨</div>
-                        <h3 class="text-2xl font-bold mb-4">Customizable Karts</h3>
-                        <p class="text-gray-300">Personalize your kart with different colors, designs, and upgrades.</p>
-            </div>
+                    <!-- Customization -->
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <div class="text-6xl text-center mb-4">🎨</div>
+                        <h3 class="text-xl font-bold text-purple-400 mb-3 text-center">Kart Customization</h3>
+                        <p class="text-gray-300 text-center">
+                            Personalize your racing experience with unlockable kart designs, colors, and cosmetic upgrades in Smash Karts.
+                        </p>
+                    </div>
 
-                    <div class="bg-gray-900 p-8 rounded-xl card-hover border border-gray-700">
-                        <div class="text-4xl mb-4">🏆</div>
-                        <h3 class="text-2xl font-bold mb-4">Competitive Ranking</h3>
-                        <p class="text-gray-300">Climb the leaderboards and prove you're the ultimate Smash Karts champion.</p>
-            </div>
+                    <!-- Arena Collection -->
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <div class="text-6xl text-center mb-4">🏟️</div>
+                        <h3 class="text-xl font-bold text-orange-400 mb-3 text-center">Diverse Arenas</h3>
+                        <p class="text-gray-300 text-center">
+                            Battle across themed environments with unique layouts and obstacles. Regular updates bring fresh arenas to Smash Karts.
+                        </p>
+                    </div>
 
-                    <div class="bg-gray-900 p-8 rounded-xl card-hover border border-gray-700">
-                        <div class="text-4xl mb-4">🎮</div>
-                        <h3 class="text-2xl font-bold mb-4">Easy Controls</h3>
-                        <p class="text-gray-300">Simple and intuitive controls that are easy to learn but hard to master.</p>
+                    <!-- Cross-Platform -->
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <div class="text-6xl text-center mb-4">📱</div>
+                        <h3 class="text-xl font-bold text-yellow-400 mb-3 text-center">Cross-Platform Play</h3>
+                        <p class="text-gray-300 text-center">
+                            Play on any device with seamless browser support. Smash Karts works on desktop, mobile, and tablet devices.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- What is Section -->
-        <section id="what-is" class="py-20 bg-gray-900">
+        <!-- What is Smash Karts Section -->
+        <section id="what-is" class="py-16 bg-gray-800">
             <div class="container mx-auto px-4 max-w-6xl">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="text-4xl font-bold mb-6">What is Smash Karts?</h2>
-                        <div class="space-y-4 text-gray-300 text-lg">
-                            <p>
-                                Smash Karts is an exhilarating online multiplayer kart racing game that combines 
-                                high-speed racing with intense battle arena action. Players from around the world 
-                                compete in real-time matches, racing through dynamic arenas while collecting 
-                                power-ups and weapons to gain an advantage over their opponents.
-                            </p>
-                            <p>
-                                The game features a unique blend of racing and combat mechanics, where strategy 
-                                and skill are equally important. Whether you're dodging missiles, collecting 
-                                speed boosts, or perfectly timing your attacks, every match offers a thrilling 
-                                and unpredictable experience.
-                            </p>
-                        </div>
-                        <ul class="mt-8 space-y-3">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+                    What is Smash Karts?
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-bold text-orange-400">Ultimate Kart Racing Experience</h3>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            <strong>Smash Karts</strong> is a free-to-play 3D multiplayer kart racing game that combines high-speed racing with strategic combat. Battle up to 24 players in real-time across colorful arenas filled with weapons and power-ups.
+                        </p>
+                        <p class="text-gray-300">
+                            Created by Tall Team and launched in March 2020, <strong>Smash Karts</strong> has revolutionized browser-based racing games with its unique blend of Mario Kart-style gameplay and battle royale elements.
+                        </p>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700">
+                        <h4 class="text-xl font-bold text-blue-400 mb-4">Key Game Facts</h4>
+                        <ul class="space-y-3 text-gray-300">
                             <li class="flex items-center space-x-3">
                                 <span class="text-green-400">✓</span>
-                                <span>Real-time multiplayer battles</span>
+                                <span>Free browser-based gameplay</span>
                             </li>
                             <li class="flex items-center space-x-3">
                                 <span class="text-green-400">✓</span>
-                                <span>Dynamic power-up system</span>
-                            </li>
-                            <li class="flex items-center space-x-3">
-                                <span class="text-green-400">✓</span>
-                                <span>Multiple game modes</span>
+                                <span>Up to 24 players per match</span>
                             </li>
                             <li class="flex items-center space-x-3">
                                 <span class="text-green-400">✓</span>
                                 <span>Cross-platform compatibility</span>
                             </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="text-green-400">✓</span>
+                                <span>Regular content updates</span>
+                            </li>
                         </ul>
                     </div>
-                    <div class="text-center">
-                        <img src="https://via.placeholder.com/500x350/4a90e2/ffffff?text=Game+Arena" 
-                             alt="Smash Karts arena" 
-                             class="rounded-xl shadow-2xl max-w-full h-auto">
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 text-center">
+                        <div class="text-4xl mb-4">🎮</div>
+                        <h3 class="text-lg font-bold text-purple-400 mb-3">Gameplay Evolution</h3>
+                        <p class="text-gray-300 text-sm">
+                            Smash Karts evolved from traditional racing to include weapon-based combat, creating a unique gaming experience that keeps players engaged.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 text-center">
+                        <div class="text-4xl mb-4">🏆</div>
+                        <h3 class="text-lg font-bold text-yellow-400 mb-3">Competitive Scene</h3>
+                        <p class="text-gray-300 text-sm">
+                            Join millions of players in competitive Smash Karts matches, tournaments, and seasonal events with exclusive rewards.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 text-center">
+                        <div class="text-4xl mb-4">🌟</div>
+                        <h3 class="text-lg font-bold text-red-400 mb-3">Innovation</h3>
+                        <p class="text-gray-300 text-sm">
+                            Smash Karts pioneered browser-based multiplayer racing with its advanced networking and real-time combat systems.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- How to Play Section -->
-        <section id="how-to-play" class="py-20 bg-gray-800">
+        <section id="how-to-play" class="py-16 bg-gray-900">
             <div class="container mx-auto px-4 max-w-6xl">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">How to Play Smash Karts</h2>
-                    <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-                        Master the basics and dominate the arena with these simple steps
-                    </p>
-                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                    How to Play Smash Karts
+                </h2>
                 
-                <div class="space-y-8">
-                    <div class="flex flex-col md:flex-row items-center gap-8 bg-gray-900 p-8 rounded-xl">
-                        <div class="gradient-primary w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold flex-shrink-0">
-                            1
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Getting Started -->
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <div class="text-center mb-4">
+                            <div class="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="text-white font-bold text-xl">1</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-green-400">Getting Started</h3>
                         </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-3">Join a Match</h3>
-                            <p class="text-gray-300 text-lg">
-                                Click "Play Now" to instantly join a multiplayer match with players worldwide. 
-                                No registration required!
-                            </p>
-                        </div>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>• Click "START PLAYING" to begin</li>
+                            <li>• Choose your preferred game mode</li>
+                            <li>• Select your kart and customize appearance</li>
+                            <li>• Join a lobby or create your own room</li>
+                        </ul>
                     </div>
-                    
-                    <div class="flex flex-col md:flex-row items-center gap-8 bg-gray-900 p-8 rounded-xl">
-                        <div class="gradient-primary w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold flex-shrink-0">
-                            2
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-3">Master the Controls</h3>
-                            <p class="text-gray-300 text-lg">
-                                Use WASD or arrow keys to move, spacebar to use items, and mouse to aim. 
-                                Simple controls for maximum fun!
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-col md:flex-row items-center gap-8 bg-gray-900 p-8 rounded-xl">
-                        <div class="gradient-primary w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold flex-shrink-0">
-                            3
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-3">Collect Power-ups</h3>
-                            <p class="text-gray-300 text-lg">
-                                Drive over power-ups to collect weapons, shields, and speed boosts. 
-                                Use them strategically to gain an advantage!
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-col md:flex-row items-center gap-8 bg-gray-900 p-8 rounded-xl">
-                        <div class="gradient-primary w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold flex-shrink-0">
-                            4
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-3">Battle and Race</h3>
-                            <p class="text-gray-300 text-lg">
-                                Eliminate opponents while racing to victory. Balance offense, defense, 
-                                and speed to become the ultimate champion!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Why Play Section -->
-        <section id="why-play" class="py-20 bg-gray-900">
-            <div class="container mx-auto px-4 max-w-6xl">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">Why Play Smash Karts?</h2>
-                    <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-                        Discover why millions of players choose Smash Karts for their gaming experience
-                    </p>
+                    <!-- Basic Controls -->
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <div class="text-center mb-4">
+                            <div class="bg-blue-500 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="text-white font-bold text-xl">2</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-blue-400">Master the Controls</h3>
+                        </div>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>• Use WASD or arrow keys to drive</li>
+                            <li>• Spacebar to use collected weapons</li>
+                            <li>• Drift around corners for speed boosts</li>
+                            <li>• Collect power-ups from around the arena</li>
+                        </ul>
+                    </div>
+
+                    <!-- Winning Strategies -->
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <div class="text-center mb-4">
+                            <div class="bg-purple-500 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="text-white font-bold text-xl">3</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-purple-400">Winning Strategies</h3>
+                        </div>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>• Time your weapon usage effectively</li>
+                            <li>• Use the environment for tactical advantage</li>
+                            <li>• Stay mobile to avoid enemy attacks</li>
+                            <li>• Learn each arena's unique features</li>
+                        </ul>
                 </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="text-center bg-gray-800 p-8 rounded-xl card-hover">
-                        <div class="text-5xl mb-4">⚡</div>
-                        <h3 class="text-xl font-bold mb-3">Instant Action</h3>
-                        <p class="text-gray-300">
-                            Jump straight into the action with no downloads, installations, or lengthy tutorials.
-                        </p>
-                    </div>
-                    
-                    <div class="text-center bg-gray-800 p-8 rounded-xl card-hover">
-                        <div class="text-5xl mb-4">🎯</div>
-                        <h3 class="text-xl font-bold mb-3">Skill-Based</h3>
-                        <p class="text-gray-300">
-                            Success depends on your racing skills, strategic thinking, and quick reflexes.
-                        </p>
-                    </div>
-                    
-                    <div class="text-center bg-gray-800 p-8 rounded-xl card-hover">
-                        <div class="text-5xl mb-4">🌟</div>
-                        <h3 class="text-xl font-bold mb-3">Regular Updates</h3>
-                        <p class="text-gray-300">
-                            Enjoy fresh content with regular updates including new maps and power-ups.
-                        </p>
-                    </div>
-                    
-                    <div class="text-center bg-gray-800 p-8 rounded-xl card-hover">
-                        <div class="text-5xl mb-4">👥</div>
-                        <h3 class="text-xl font-bold mb-3">Global Community</h3>
-                        <p class="text-gray-300">
-                            Join a vibrant community of players from around the world.
-                        </p>
-                    </div>
                 </div>
             </div>
         </section>
 
         <!-- FAQ Section -->
-        <section id="faq" class="py-20 bg-gray-800">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-                    <p class="text-xl text-gray-300">
-                        Find answers to common questions about Smash Karts
-                    </p>
-                </div>
+        <section id="faq" class="py-16 bg-gray-800">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                    Smash Karts FAQ
+                </h2>
                 
-                <div class="space-y-4">
-                    <details class="bg-gray-900 rounded-xl border border-gray-700 overflow-hidden">
-                        <summary class="p-6 cursor-pointer hover:bg-gray-800 transition-colors font-bold text-lg">
-                            Is Smash Karts free to play?
-                        </summary>
-                        <div class="px-6 pb-6 text-gray-300">
-                            <p>Yes! Smash Karts is completely free to play. You can enjoy all the core gameplay features without any cost. Simply visit our website and start playing instantly.</p>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Basic Questions -->
+                    <div class="space-y-6">
+                        <div class="bg-gray-900 rounded-xl border border-gray-700 p-6">
+                            <h3 class="font-bold text-xl mb-3 text-blue-400">Is Smash Karts free to play?</h3>
+                            <p class="text-gray-300">
+                                Yes! Smash Karts is completely free with no downloads required. All game modes, weapons, and core features are accessible without payment.
+                            </p>
                         </div>
-                    </details>
-                    
-                    <details class="bg-gray-900 rounded-xl border border-gray-700 overflow-hidden">
-                        <summary class="p-6 cursor-pointer hover:bg-gray-800 transition-colors font-bold text-lg">
-                            Do I need to download anything to play?
-                        </summary>
-                        <div class="px-6 pb-6 text-gray-300">
-                            <p>No downloads required! Smash Karts runs directly in your web browser. Just click "Play Now" and you'll be racing within seconds.</p>
+
+                        <div class="bg-gray-900 rounded-xl border border-gray-700 p-6">
+                            <h3 class="font-bold text-xl mb-3 text-green-400">How many players can play together?</h3>
+                            <p class="text-gray-300">
+                                Smash Karts supports up to 24 players in a single match, creating intense multiplayer battles across various game modes.
+                            </p>
                         </div>
-                    </details>
-                    
-                    <details class="bg-gray-900 rounded-xl border border-gray-700 overflow-hidden">
-                        <summary class="p-6 cursor-pointer hover:bg-gray-800 transition-colors font-bold text-lg">
-                            What are the system requirements?
-                        </summary>
-                        <div class="px-6 pb-6 text-gray-300">
-                            <p>Smash Karts works on any modern device with a web browser and internet connection. It's optimized for both desktop and mobile devices.</p>
+
+                        <div class="bg-gray-900 rounded-xl border border-gray-700 p-6">
+                            <h3 class="font-bold text-xl mb-3 text-purple-400">What devices can run Smash Karts?</h3>
+                            <p class="text-gray-300">
+                                Smash Karts works on desktop computers, laptops, tablets, and smartphones through modern web browsers. No app download needed.
+                            </p>
                         </div>
-                    </details>
-                    
-                    <details class="bg-gray-900 rounded-xl border border-gray-700 overflow-hidden">
-                        <summary class="p-6 cursor-pointer hover:bg-gray-800 transition-colors font-bold text-lg">
-                            Can I play on mobile devices?
-                        </summary>
-                        <div class="px-6 pb-6 text-gray-300">
-                            <p>Absolutely! Smash Karts is fully optimized for mobile devices. You can play on smartphones and tablets with touch controls.</p>
+
+                        <div class="bg-gray-900 rounded-xl border border-gray-700 p-6">
+                            <h3 class="font-bold text-xl mb-3 text-orange-400">Are there different game modes?</h3>
+                            <p class="text-gray-300">
+                                Yes! Choose from Free For All, Capture The Flag, Gem Collector, Hat Holder, Team Battles, and more unique Smash Karts modes.
+                            </p>
                         </div>
-                    </details>
-                    
-                    <details class="bg-gray-900 rounded-xl border border-gray-700 overflow-hidden">
-                        <summary class="p-6 cursor-pointer hover:bg-gray-800 transition-colors font-bold text-lg">
-                            How many players can play in one match?
-                        </summary>
-                        <div class="px-6 pb-6 text-gray-300">
-                            <p>Each match can accommodate up to 8 players, creating intense and competitive battles. The game automatically matches you with players of similar skill levels.</p>
+                    </div>
+
+                    <!-- Technical Questions -->
+                    <div class="space-y-6">
+                        <div class="bg-gray-900 rounded-xl border border-gray-700 p-6">
+                            <h3 class="font-bold text-xl mb-3 text-red-400">What are the system requirements?</h3>
+                            <p class="text-gray-300">
+                                Any device with a modern browser (Chrome, Firefox, Safari, Edge) and stable internet connection can run Smash Karts smoothly.
+                            </p>
                         </div>
-                    </details>
+
+                        <div class="bg-gray-900 rounded-xl border border-gray-700 p-6">
+                            <h3 class="font-bold text-xl mb-3 text-yellow-400">Can I customize my kart?</h3>
+                            <p class="text-gray-300">
+                                Absolutely! Unlock different kart designs, colors, and character customizations as you play and complete challenges in Smash Karts.
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-xl border border-gray-700 p-6">
+                            <h3 class="font-bold text-xl mb-3 text-cyan-400">How do weapons work?</h3>
+                            <p class="text-gray-300">
+                                Drive into loot boxes to collect weapons. You can only carry one weapon at a time - use it before collecting another!
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-900 rounded-xl border border-gray-700 p-6">
+                            <h3 class="font-bold text-xl mb-3 text-pink-400">Are there regular updates?</h3>
+                            <p class="text-gray-300">
+                                Yes! Smash Karts receives seasonal updates with new arenas, themes, customization options, and gameplay features.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center mt-12">
+                    <h3 class="text-2xl font-bold text-white mb-4">Ready to Start Racing?</h3>
+                    <a href="#game" class="gradient-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg transition-all transform hover:scale-105 inline-block">
+                        PLAY SMASH KARTS NOW
+                    </a>
                 </div>
             </div>
         </section>
@@ -443,14 +699,16 @@
                     <p class="text-gray-300 mb-4">
                         The ultimate online kart racing battle experience. Race, battle, and dominate players worldwide!
                     </p>
-            </div>
+                </div>
 
                 <div>
                     <h4 class="font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-gray-300">
                         <li><a href="#game" class="hover:text-orange-400 transition-colors">Play Now</a></li>
                         <li><a href="#features" class="hover:text-orange-400 transition-colors">Features</a></li>
+                        <li><a href="#what-is" class="hover:text-orange-400 transition-colors">What is</a></li>
                         <li><a href="#how-to-play" class="hover:text-orange-400 transition-colors">How to Play</a></li>
+                        <li><a href="#why-play" class="hover:text-orange-400 transition-colors">Why Play</a></li>
                         <li><a href="#faq" class="hover:text-orange-400 transition-colors">FAQ</a></li>
                     </ul>
                 </div>
@@ -458,21 +716,200 @@
                 <div>
                     <h4 class="font-bold mb-4">Game Info</h4>
                     <ul class="space-y-2 text-gray-300">
-                        <li><a href="#" class="hover:text-orange-400 transition-colors">Game Rules</a></li>
-                        <li><a href="#" class="hover:text-orange-400 transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-orange-400 transition-colors">Terms of Service</a></li>
-                        <li><a href="#" class="hover:text-orange-400 transition-colors">Contact Us</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-orange-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="hover:text-orange-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="contact.html" class="hover:text-orange-400 transition-colors">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
                 <p>&copy; 2024 Smash Karts. All rights reserved. Built for racing enthusiasts worldwide.</p>
-        </div>
+            </div>
         </div>
     </footer>
 
     <script>
+        // Game management variables
+        let isFullscreen = false;
+        let gameContainer = null;
+        
+        // Initialize game
+        document.addEventListener('DOMContentLoaded', function() {
+            gameContainer = document.querySelector('.aspect-video');
+            
+            // Hide loading screen after iframe loads
+            const iframe = document.getElementById('gameFrame');
+            const loadingDiv = document.getElementById('gameLoading');
+            
+            iframe.addEventListener('load', function() {
+                setTimeout(() => {
+                    if (loadingDiv) {
+                        loadingDiv.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingDiv.style.display = 'none';
+                        }, 300);
+                    }
+                }, 1000);
+            });
+            
+            // Listen for fullscreen changes
+            document.addEventListener('fullscreenchange', updateFullscreenIcon);
+            document.addEventListener('webkitfullscreenchange', updateFullscreenIcon);
+            document.addEventListener('mozfullscreenchange', updateFullscreenIcon);
+            document.addEventListener('MSFullscreenChange', updateFullscreenIcon);
+            
+            // Initialize mobile optimizations
+            window.addEventListener('resize', optimizeForMobile);
+            optimizeForMobile();
+        });
+
+        // Start game function
+        function startGame() {
+            const gameFrame = document.getElementById('gameFrame');
+            // Game is already loaded, just scroll to it
+            document.getElementById('game').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Focus on the game for better interaction
+            setTimeout(() => {
+                gameFrame.focus();
+            }, 500);
+        }
+        
+        // Toggle fullscreen function
+        function toggleFullscreen() {
+            if (!gameContainer) return;
+            
+            if (!isFullscreen) {
+                enterFullscreen();
+            } else {
+                exitFullscreen();
+            }
+        }
+        
+        // Enter fullscreen mode
+        function enterFullscreen() {
+            const elem = gameContainer;
+            
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            } else {
+                // Fallback for browsers that don't support fullscreen API
+                fallbackFullscreen();
+            }
+        }
+        
+        // Exit fullscreen mode
+        function exitFullscreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            } else {
+                // Fallback
+                exitFallbackFullscreen();
+            }
+        }
+        
+        // Fallback fullscreen for unsupported browsers
+        function fallbackFullscreen() {
+            gameContainer.classList.add('fullscreen-container');
+            isFullscreen = true;
+            updateFullscreenIcon();
+            
+            // Add escape key listener
+            document.addEventListener('keydown', handleEscapeKey);
+        }
+        
+        function exitFallbackFullscreen() {
+            gameContainer.classList.remove('fullscreen-container');
+            isFullscreen = false;
+            updateFullscreenIcon();
+            
+            // Remove escape key listener
+            document.removeEventListener('keydown', handleEscapeKey);
+        }
+        
+        // Handle escape key for fallback fullscreen
+        function handleEscapeKey(event) {
+            if (event.key === 'Escape' && isFullscreen) {
+                exitFallbackFullscreen();
+            }
+        }
+        
+        // Update fullscreen icon
+        function updateFullscreenIcon() {
+            const isCurrentlyFullscreen = !!(
+                document.fullscreenElement ||
+                document.webkitFullscreenElement ||
+                document.mozFullScreenElement ||
+                document.msFullscreenElement ||
+                gameContainer.classList.contains('fullscreen-container')
+            );
+            
+            isFullscreen = isCurrentlyFullscreen;
+            const icon = document.getElementById('fullscreenIcon');
+            const btn = document.getElementById('fullscreenBtn');
+            
+            if (isFullscreen) {
+                // Exit fullscreen icon
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+                btn.title = 'Exit Fullscreen';
+            } else {
+                // Enter fullscreen icon
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>';
+                btn.title = 'Enter Fullscreen';
+            }
+        }
+        
+        // Refresh game function
+        function refreshGame() {
+            const gameFrame = document.getElementById('gameFrame');
+            const loadingDiv = document.getElementById('gameLoading');
+            
+            // Show loading screen
+            if (loadingDiv) {
+                loadingDiv.style.display = 'flex';
+                loadingDiv.style.opacity = '1';
+            }
+            
+            // Reload iframe
+            const currentSrc = gameFrame.src;
+            gameFrame.src = 'about:blank';
+            setTimeout(() => {
+                gameFrame.src = currentSrc;
+            }, 100);
+        }
+        
+        // Mobile optimization
+        function optimizeForMobile() {
+            if (window.innerWidth <= 768) {
+                // Show controls on mobile by default
+                const controls = document.querySelector('.game-controls');
+                if (controls) {
+                    controls.style.opacity = '1';
+                }
+                
+                // Add touch event handling
+                gameContainer.addEventListener('touchstart', function() {
+                    this.focus();
+                });
+            }
+        }
+        
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -486,6 +923,26 @@
                 }
             });
         });
+        
+        // Performance optimization for iframe
+        if ('IntersectionObserver' in window) {
+            const gameObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Game is visible, ensure it's loaded
+                        const iframe = entry.target.querySelector('iframe');
+                        if (iframe && !iframe.src.includes('smash-karts')) {
+                            iframe.src = 'https://www.gameflare.com/embed/smash-karts/';
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            const gameSection = document.getElementById('game');
+            if (gameSection) {
+                gameObserver.observe(gameSection);
+            }
+        }
     </script>
 </body>
 </html> 
